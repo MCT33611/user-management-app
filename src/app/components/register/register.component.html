@@ -1,0 +1,25 @@
+<section>
+  <div class="register-container">
+    <form class="register-form" [formGroup]="registerForm" (submit)="onRegister()">
+      <h1 class="mb-4 text-xl font-bold leading-none tracking-tight text-gray-900 dark:text-white">
+        Welcome To User Management App
+      </h1>
+      <p>Please register to your account</p>
+      <div class="input-group">
+        <input type="text" id="username" name="username" placeholder="Username" required formControlName="name" (change)="checkValidation()">
+        <span class="text-red-600 font-thin">{{formVlid.IsName}}</span>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" name="password" placeholder="Password" required formControlName="hashedPassword" (change)="checkValidation()">
+        <span class="text-red-600 font-thin">{{formVlid.IsPass}}</span>
+      </div>
+      <div class="input-group">
+        <input type="password" id="cpassword" name="Cpassword" placeholder="Confirm Password" required formControlName="CPassword" (change)="checkValidation()">
+        <span class="text-red-600 font-thin">{{formVlid.IsCPass}}</span>
+      </div>
+      <button type="submit">Register</button>
+      
+    </form>
+    <a routerLink="/login">login</a>
+  </div>
+</section>

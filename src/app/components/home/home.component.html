@@ -1,0 +1,12 @@
+<section class="h-screen w-full">
+    <app-header headerTitle="HOME" [imageUrl]="user.photoUrl+''"></app-header>
+    <section class="home-body w-full h-80 flex flex-col justify-center items-center">
+        <h1 class="text-5xl font-bold text-violet-600 ">Hi {{user.name}} </h1>
+        <h1 class="text-5xl text-indigo-600 font-">welcome to app</h1>
+
+        <app-profile [ishidden]="profileVisible$ | async"></app-profile>
+
+
+    </section>
+    <app-footer></app-footer>
+</section>

@@ -1,0 +1,27 @@
+.upsert-box {
+    transform: translate(-50%, 50%);
+    height: 60%;
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    left: 50%;
+}
+
+.input-group {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.input-group input {
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 100%;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}

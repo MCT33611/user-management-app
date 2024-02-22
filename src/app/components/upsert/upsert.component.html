@@ -1,0 +1,38 @@
+<div class="upsert-box hidden flex-col justify-center items-center  absolute z-10 max-w-sm rounded overflow-hidden shadow
+  bg-gradient-to-r from-violet-600 to-indigo-600 p-7 " [ngClass]="{'hidden': ishidden,'flex':!ishidden}" (blur)="hide()"
+
+  >
+    <!-- <div class="bg-white w-24 h-24 rounded-full overflow-hidden p-1">
+        <img [src]=""
+            alt="" width="100%" height="100%">
+    </div> -->
+    {{userId}}
+    <form [formGroup]="Form" class="w-full my-2" (submit)="onUpsert()" >
+        <input type="hidden" name="id" formControlName="id" >
+        <input type="hidden" name="roleId" formControlName="roleId">
+        <div class="flex items-center flex-col w-full">
+            <div class="input-group">
+                <input type="text" id="Name" name="Name"  formControlName="name" placeholder="Name"  (change)="checkValidations()"  required>
+                <div class="min-h-3"><span class="text-red-600 font-thin ">{{formVaild.IsName}}</span></div>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="password"  formControlName="hashedPassword" placeholder="Password" (change)="checkValidations()"  required>
+                <div class="min-h-3"><span class="text-red-600 font-thin ">{{formVaild.IsPass}}</span></div>
+            </div>
+            <div class="input-group">
+                <input type="password" id="Cpassword" name="Cpassword" formControlName="CPassword"  placeholder="Confirm password" (change)="checkValidations()" >
+                <div class="min-h-3"><span class="text-red-600 font-thin">{{formVaild.IsCPass}}</span></div>
+            </div>
+            <button type="submit" class="bg-white opacity-25 rounded-full py-1 px-3 m-1 w-max">
+                @if(userId == 0)
+                {
+                    Create
+                }
+                @else {
+                    Update
+                }
+            </button>
+        </div>
+        
+    </form>
+</div>
